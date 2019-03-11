@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/dagreatbrendino/friendFinder/issues"
   },
-  "homepage": "https://github.com/dagreatbrendino/friendFinder#readme"
+  "homepage": "https://github.com/dagreatbrendino/friendFinder#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
