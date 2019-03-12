@@ -6,8 +6,13 @@ module.exports = function(app){
     app.get("/survey", function(req, res){
         res.sendFile(path.join(__dirname, "../public/survey.html"));
     });
-
+    app.get("/assets/css/style.css", function(req, res){
+        res.sendFile(path.join(__dirname, "../public/assets/css/style.css"));
+    });
+    app.get("/assets/images/halftone-yellow.png", function(req, res){
+        res.sendFile(path.join(__dirname,"../public/assets/images/halftone-yellow.png"));
+    });
     app.get("*", function(req, res){
         res.sendFile(path.join(__dirname, "../public/home.html"));
-    })
+    });
 }

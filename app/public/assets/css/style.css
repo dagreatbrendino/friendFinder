@@ -1,0 +1,20 @@
+body{
+    background-image: url(../images/halftone-yellow.png);
+    color: #4ABDAC
+}
+
+.container{
+    background-color: #DFDCE3;
+}
+
+.match-pic{
+    margin: 0 25%;
+}
+.match-nm{
+    margin: 0 25% 5px;
+    text-align: center;
+}
+.modal-title{
+    margin: 0 25% 5px;
+    text-align: center;
+}
