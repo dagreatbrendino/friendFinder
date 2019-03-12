@@ -13,7 +13,8 @@ var peopleArray = [
     "1",
     "1",
     "1"
-    ]
+    ],
+    "id": "0"
     },
     {
     "name": "Cheryl",
@@ -29,7 +30,8 @@ var peopleArray = [
     "3",
     "3",
     "3"
-    ]
+    ],
+    "id": "1"
     },
     {
     "name": "Jeff",
@@ -45,7 +47,8 @@ var peopleArray = [
     "5",
     "5",
     "5"
-    ]
+    ],
+    "id": "2"
     }
     ];
 

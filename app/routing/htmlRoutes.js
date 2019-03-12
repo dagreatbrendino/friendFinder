@@ -12,6 +12,9 @@ module.exports = function(app){
     app.get("/assets/images/halftone-yellow.png", function(req, res){
         res.sendFile(path.join(__dirname,"../public/assets/images/halftone-yellow.png"));
     });
+    app.get("/allFriends", function(req,res){
+        res.sendFile(path.join(__dirname, "../public/allFriends.html"));
+    })
     app.get("*", function(req, res){
         res.sendFile(path.join(__dirname, "../public/home.html"));
     });

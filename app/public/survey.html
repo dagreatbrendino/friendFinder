@@ -20,7 +20,7 @@
     
     </head>
 <body>
-
+    <!-- HTML was taken and modified from example -->
     <div class="container">
   
       <h2>Friend Finder Survey</h2>
@@ -189,8 +189,12 @@
           <div class="modal-body">
             <h2 class="match-nm" id="match-name"></h2>
             <img class="img-fluid match-pic" id="match-img" style="max-width: 50%;" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+            <h5 class="match-nm" id="match-percent"><span>% match</span></h5>
           </div>
           <div class="modal-footer">
+            <a href="allFriends">
+              <button type="button" class="btn btn-default">See all Matches!</button>
+            </a>
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
         </div>
@@ -240,21 +244,53 @@
               parseInt($("#q10").val())
             ]
           };
-          console.log("Searching for a friend!");
+          //a variable to hold the id of the match 
+          var matchID;
             // AJAX post the data to the friends API.
           $.post("/api/people", userData, function(data) {
   
             // Grab the result from the AJAX post so that the best match's name and photo are displayed.
             $("#match-name").text(data.name);
             $("#match-img").attr("src", data.photo);
-  
+            //the id of the best match will be used later to get the match percentage
+            matchID = parseInt(data.id);
+            
             // Show the modal with the best match
             $("#results-modal").modal("toggle");
   
           });
+          //this will get the match match percentage for the best match for the user that was just submitted
+          $.ajax({ url:"/api/people", method: "GET" })
+            .then(function(allPeople){
+              //the user info will be the last item in the array of people objects
+              var userInfo = allPeople[allPeople.length-1];
+              //clear local storage
+              localStorage.clear();
+              //set a variable in local storage for the id of the user
+              localStorage.setItem("userId", userInfo.id);
+              //get the match percent for the best match from the percent array of the object
+              var matchPercent = userInfo.percent[matchID];
+
+              //the following will count up from 0 to the match percentage
+              var intervalId;
+              var percentCountUp =0;
+              function intervalFunc() {
+                intervalId = setInterval(matchPercentIncr, 25);
+              }
+              function matchPercentIncr() {
+                $("#match-percent").text(percentCountUp);
+                if (percentCountUp === matchPercent) {
+                  clearInterval(intervalId);
+                  $("#match-percent").append("% match");
+                }
+                percentCountUp += 2.5;
+              }
+              intervalFunc();
+          });
         } else {
           alert("Please fill out all fields before submitting!");
         }
+        
       });
     </script>
   

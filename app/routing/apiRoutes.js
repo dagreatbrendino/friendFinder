@@ -11,6 +11,10 @@ module.exports = function(app){
         var bestMatch;
         //the worst possible matchscore is 40, so this ensures the user will be given a match
         var bestMatchScore = 41;
+        //variable for match percentage
+        var matchPercent;
+        //add an array to hold match percentages for each person 
+        req.body.percent = [];
         //loop through every person in potential friends
         potentialFriends.forEach(function(person){
             //intialize the match score for the current person at 0
@@ -22,6 +26,11 @@ module.exports = function(app){
                 //add the difference to the match score
                 matchScore += questionScore;
             }
+            //update the match percentage
+            matchPercent = 100* (40-matchScore)/40
+            req.body.percent.push(matchPercent);
+            req.body.id = potentialFriends.length;
+            console.log(req.body.percent);
             //if the score is lower than the current best friend match, change the match
             if (matchScore < bestMatchScore){
                 //update the best match score 
