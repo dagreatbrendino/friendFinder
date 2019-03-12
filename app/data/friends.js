@@ -1,7 +1,7 @@
 var peopleArray = [
     {
-    "name": "brendan",
-    "photo": "https://staticdelivery.nexusmods.com/mods/1151/images/thumbnails/9605-1-1454866483.jpg",
+    "name": "Larry",
+    "photo": "https://ksassets.timeincuk.net/wp/uploads/sites/55/2015/11/Screen-Shot-2015-11-09-at-08.32.09-1220x673.png",
     "scores": [
     "1",
     "1",
@@ -16,8 +16,24 @@ var peopleArray = [
     ]
     },
     {
-    "name": "brendan1",
-    "photo": "https://wanderinpoet.files.wordpress.com/2018/09/ed-whelan-copy.jpg?w=604&h=270&crop=1",
+    "name": "Cheryl",
+    "photo": "https://cimg.tvgcdn.net/i/2010/05/27/3e5a6c22-1c8f-4ed0-88ce-82733a9115da/3c8ba7d94652b08134e70bb5f1556972/100527cheryly-hines1.jpg",
+    "scores": [
+    "3",
+    "3",
+    "3",
+    "3",
+    "3",
+    "3",
+    "3",
+    "3",
+    "3",
+    "3"
+    ]
+    },
+    {
+    "name": "Jeff",
+    "photo": "https://www.telegraph.co.uk/content/dam/tv/2017/09/20/the-freak-book-02-1024_trans_NvBQzQNjv4BqtR1WRZ4lb6BOb1-FBRpn-lFGGjcI28awSNtOPAVs6pc.jpg?imwidth=1400",
     "scores": [
     "5",
     "5",
@@ -29,22 +45,6 @@ var peopleArray = [
     "5",
     "5",
     "5"
-    ]
-    },
-    {
-    "name": "brendan3",
-    "photo": "https://i.ytimg.com/vi/nsCIcLCOM9E/maxresdefault.jpg",
-    "scores": [
-    "1",
-    "1",
-    "1",
-    "1",
-    "1",
-    "1",
-    "1",
-    "1",
-    "1",
-    "1"
     ]
     }
     ];
